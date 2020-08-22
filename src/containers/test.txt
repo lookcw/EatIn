@@ -1,0 +1,10 @@
+import React from "react";
+import { List, Avatar, Button, Skeleton } from "antd";
+const count = 3;
+
+// const reducer = (accumulator, currentValue) => accumulator + currentValue.ingredient + "\n";
+
+
+
+function RecipeList(props) {
+

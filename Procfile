@@ -1,1 +1,1 @@
-web: gunicorn EatIn.wsgi --log-file -
+web: npm start
