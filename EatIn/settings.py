@@ -26,8 +26,7 @@ SECRET_KEY = 'g+@!z&f=&+u0$h93z@*oax5)f30zve**em94pg&v$^(x5=p7b$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['eat-in.herokuapp.com', '127.0.0.1:8000']
 
 # Application definition
 
@@ -35,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -73,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'EatIn.wsgi.application'
+# WSGI_APPLICATION = 'EatIn.wsgi.application'
 
 
 # Database
@@ -89,7 +88,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
 
 
 # Password validation
@@ -131,9 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
