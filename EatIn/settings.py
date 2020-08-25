@@ -79,11 +79,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lookcw',
-        'USER': 'lookcw',
-        'PASSWORD': 'Rewq!@#4',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'NAME': 'd3a1smbdcihjfi',
+        'USER': 'awslxediukgtkg',
+        'PASSWORD': '4ad49d05c8e29253dea286121cb0d8b4ea23c728f50e2176613fe5b95ab25d30',
+        'HOST': 'ec2-54-158-122-162.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
