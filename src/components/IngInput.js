@@ -32,7 +32,7 @@ class IngInput extends React.Component {
       data: req_json,
     };
     axios
-      .post("http://localhost:8000/api/ing_query", requestOptions)
+      .post("https://eat-in.herokuapp.com:8000/api/ing_query", requestOptions)
       .then((response) => response.data)
       .then((data) => this.props.callback(data));
   }
@@ -42,7 +42,7 @@ class IngInput extends React.Component {
       headers: { "Content-Type": "application/json" },
     };
     axios
-      .get("http://localhost:8000/api/allrecipes", requestOptions)
+      .get("https://eat-in.herokuapp.com:8000/api/allrecipes", requestOptions)
       .then((response) => response.data)
       .then((data) => this.props.callback(data));
   };

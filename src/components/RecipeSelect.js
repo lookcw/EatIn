@@ -33,7 +33,7 @@ class RecipeSelect extends React.Component {
 
   getData = (callback) => {
     axios(
-      `http://localhost:8000/api/slicerecipes?start=${this.state.curr}&count=${count}`
+      `https://eat-in.herokuapp.com/api/slicerecipes?start=${this.state.curr}&count=${count}`
     ).then((response) => callback(response.data));
   };
 
