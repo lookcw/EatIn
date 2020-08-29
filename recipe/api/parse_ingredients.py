@@ -16,7 +16,7 @@ def _exec_crf_test(input_text, model_path):
         processed_file.write(utils.export_data(input_text))
         processed_file.flush()
         return subprocess.check_output(
-            ['crf_test', '--verbose=1', '--model', model_path,
+            ['recipe/api/crf_test', '--verbose=1', '--model', model_path,
              processed_file.name]).decode('utf-8')
 
 
