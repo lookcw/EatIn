@@ -9,4 +9,5 @@ django-cors-headers==3.4.0
 django-heroku==0.3.1
 djangorestframework==3.11.0
 whitenoise==5.2.0
+git+git://github.com/heroku/heroku-buildpack-python
 git+git://github.com/mtlynch/ingredient-phrase-tagger.git
