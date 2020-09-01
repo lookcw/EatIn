@@ -35,9 +35,8 @@ def slice_recipes(request):
 @csrf_exempt
 def ing_query(request):
     req = json.loads(request.body)['data']
-    start, end = req['start'], req['end']
-    parsed_arr = [ing['name'] for ing in parse(req['ing_arr'])]
-    counts = list(Ingredients.objects.filter(ingredient__in=parsed_arr).values(
+    start, end, ing_arr = req['start'], req['end'], req['ing_arr']
+    counts = list(Ingredients.objects.filter(ingredient__in=ing_arr).values(
         'name').annotate(num_ing=Count('name')).values('name_id', 'num_ing'))
     for count in counts:
         count['req_ing'] = getattr(Recipes.objects.get(

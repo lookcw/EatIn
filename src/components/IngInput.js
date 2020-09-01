@@ -32,7 +32,7 @@ class IngInput extends React.Component {
       data: req_json,
     };
     axios
-      .post("https://eat-in.herokuapp.com:8000/api/ing_query", requestOptions)
+      .post("https://eat-in.herokuapp.com/api/ing_query", requestOptions)
       .then((response) => response.data)
       .then((data) => this.props.callback(data));
   }
